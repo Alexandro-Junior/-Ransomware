@@ -7,45 +7,35 @@ Antes de executar os códigos de descrição e criptografia, é necessário ter 
 # Código de Descripción
 Aqui está o código base que pode ser usado para descrever arquivos criptografados pelo Ransomware Troll:
 
-import os
-import pyaes
+```pitão
+importar sistema operacional
+importar pyaes
 
-*Nome do arquivo criptografado*
+#Nome do arquivo criptografado
+file_name =  " arquivo.txt.ransomwaretroll "
 
-file_name = "arquivo.txt.ransomwaretroll"
+# Abre o arquivo criptografado em modo de leitura binária
+arquivo  =  aberto (nome_do_arquivo, " rb " )
+file_data =  arquivo .read()
+arquivo .close()
 
-*Abrir o arquivo criptografado em modo de leitura binária*
+# Chave para descripção
+chave =  b " testeransomwares "
+aes = pyaes.AESModeOfOperationCTR(chave)
 
-file = open(file_name, "rb")
+# Realizar a descritografia
+decrypt_data = aes.decrypt(dados_do_arquivo)
 
-file_data = file.read()
+# Removendo o arquivo criptografado
+os.remove(nome_do_arquivo)
 
-file.close()
+# Crie o arquivo descrito
+new_file =  " arquivo.txt "
+novo_arquivo =  aberto ( f ' { novo_arquivo } ' , " wb " )
+novo_arquivo.escrever(descriptografar_dados)
+novo_arquivo.fechar()
+```
 
-
-*Chave para descriptografia*
-
-key = b"testeransomwares"
-
-aes = pyaes.AESModeOfOperationCTR(key)
-
-*Realizar a descriptografia*
-
-decrypt_data = aes.decrypt(file_data)
-
-*Remover o arquivo criptografado*
-
-os.remove(file_name)
-
-#*Criar o arquivo descriptografado*
-
-new_file = "arquivo.txt"
-
-new_file = open(f'{new_file}', "wb")
-
-new_file.write(decrypt_data)
-
-new_file.close()
 
 -Se de substituir "arquivo.txt.ransomwaretroll"pelo nome do arquivo criptografado real que você deseja descrever e"testeransomwares" pela chave correta de descritiva fornecida pelo atacante.
 
