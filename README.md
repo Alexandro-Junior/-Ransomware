@@ -1,5 +1,5 @@
 # Ransomware
-Ransomware na Prática com Python
+Entendendo um Ransomware na Prática com Python
 
 # Pré-requisitos
 Antes de executar os códigos de descrição e criptografia, é necessário ter o Python instalado em seu sistema. Além disso, você deve ter uma biblioteca pyaesinstalada. Você pode conectá-lo usando o comandopip install pyaes .
